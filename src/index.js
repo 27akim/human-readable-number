@@ -102,6 +102,7 @@ module.exports = function toReadable (number) {
                 break;
         }
     }
+    n = Math.floor(number%10);
     switch(n)
         {
             case 1 : 
