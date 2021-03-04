@@ -1,9 +1,10 @@
-module.exports = function toReadable (number) {
+/*module.exports = */function toReadable (number) {
     if(number === 0)
     {
         return 'zero';
     }
     let result = '';
+    let space = '';
     let n = Math.floor(number/100);
     if(n > 0)
     {
@@ -37,6 +38,7 @@ module.exports = function toReadable (number) {
                 result += 'nine hundred';
                 break;
         }
+        space = ' ';
     }
     n = Math.floor(number/10) - Math.floor(number/100)*10;
     if(n > 1)
@@ -44,28 +46,60 @@ module.exports = function toReadable (number) {
         switch(n)
         {
             case 2 : 
-                result += ' twenty';
+                result = result + space + 'twenty';
                 break;
             case 3 : 
-                result += ' thirty';
+                result = result + space + 'thirty';
                 break;
             case 4 : 
-                result += ' forty';
+                result = result + space + 'forty';
                 break;
             case 5 : 
-                result += ' fifty';
+                result = result + space + 'fifty';
                 break;
             case 6 : 
-                result += ' sixty';
+                result = result + space + 'sixty';
                 break;
             case 7 : 
-                result += ' seventy';
+                result = result + space + 'seventy';
                 break;
             case 8 : 
-                result += ' eighty';
+                result = result + space + 'eighty';
                 break;
             case 9 : 
-                result += ' ninety';
+                result = result + space + 'ninety';
+                break;
+        }
+        space = ' ';
+        n = Math.floor(number%10);
+    switch(n)
+        {
+            case 1 : 
+                result = result + space + 'one';
+                break;
+            case 2 : 
+                result = result + space + 'two';
+                break;
+            case 3 : 
+                result = result + space + 'three';
+                break;
+            case 4 : 
+                result = result + space + 'four';
+                break;
+            case 5 : 
+                result = result + space + 'five';
+                break;
+            case 6 : 
+                result = result + space + 'six';
+                break;
+            case 7 : 
+                result = result + space + 'seven';
+                break;
+            case 8 : 
+                result = result + space + 'eight';
+                break;
+            case 9 : 
+                result = result + space + 'nine';
                 break;
         }
     }
@@ -75,67 +109,39 @@ module.exports = function toReadable (number) {
         switch(n)
         {
             case 0 : 
-                result += '  ten';
+                result = result + space + 'ten';
                 break;
             case 1 : 
-                result += '  eleven';
+                result = result + space + 'eleven';
                 break;
             case 2 : 
-                result += ' twelve';
+                result = result + space + 'twelve';
                 break;
             case 3 : 
-                result += ' thirteen';
+                result = result + space + 'thirteen';
                 break;
             case 4 : 
-                result += ' fourteen';
+                result = result + space + 'fourteen';
                 break;
             case 5 : 
-                result += ' fifteen';
+                result = result + space + 'fifteen';
                 break;
             case 6 : 
-                result += ' sixteen';
+                result = result + space + 'sixteen';
                 break;
             case 7 : 
-                result += ' seventeen';
+                result = result + space + 'seventeen';
                 break;
             case 8 : 
-                result += ' eighteen';
+                result = result + space + 'eighteen';
                 break;
             case 9 : 
-                result += ' nineteen';
+                result = result + space + 'nineteen';
                 break;
         }
+        space = ' ';
     }
-    n = Math.floor(number%10);
-    switch(n)
-        {
-            case 1 : 
-                result += ' one';
-                break;
-            case 2 : 
-                result += ' two';
-                break;
-            case 3 : 
-                result += ' three';
-                break;
-            case 4 : 
-                result += ' four';
-                break;
-            case 5 : 
-                result += ' five';
-                break;
-            case 6 : 
-                result += ' six';
-                break;
-            case 7 : 
-                result += ' seven';
-                break;
-            case 8 : 
-                result += ' eight';
-                break;
-            case 9 : 
-                result += ' nine';
-                break;
-        }
     return result;
 }
+
+console.log(toReadable(42));
