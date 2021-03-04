@@ -71,37 +71,6 @@ module.exports = function toReadable (number) {
                 break;
         }
         space = ' ';
-        n = Math.floor(number%10);
-    switch(n)
-        {
-            case 1 : 
-                result = result + space + 'one';
-                break;
-            case 2 : 
-                result = result + space + 'two';
-                break;
-            case 3 : 
-                result = result + space + 'three';
-                break;
-            case 4 : 
-                result = result + space + 'four';
-                break;
-            case 5 : 
-                result = result + space + 'five';
-                break;
-            case 6 : 
-                result = result + space + 'six';
-                break;
-            case 7 : 
-                result = result + space + 'seven';
-                break;
-            case 8 : 
-                result = result + space + 'eight';
-                break;
-            case 9 : 
-                result = result + space + 'nine';
-                break;
-        }
     }
     else if(n === 1)
     {
@@ -140,6 +109,39 @@ module.exports = function toReadable (number) {
                 break;
         }
         space = ' ';
+
+        return result;
     }
+    n = Math.floor(number%10);
+    switch(n)
+        {
+            case 1 : 
+                result = result + space + 'one';
+                break;
+            case 2 : 
+                result = result + space + 'two';
+                break;
+            case 3 : 
+                result = result + space + 'three';
+                break;
+            case 4 : 
+                result = result + space + 'four';
+                break;
+            case 5 : 
+                result = result + space + 'five';
+                break;
+            case 6 : 
+                result = result + space + 'six';
+                break;
+            case 7 : 
+                result = result + space + 'seven';
+                break;
+            case 8 : 
+                result = result + space + 'eight';
+                break;
+            case 9 : 
+                result = result + space + 'nine';
+                break;
+        }
     return result;
 }
