@@ -1,4 +1,8 @@
 module.exports = function toReadable (number) {
+    if(number === 0)
+    {
+        return 'zero';
+    }
     let result = '';
     let n = Math.floor(number/100);
     if(n > 0)
@@ -133,4 +137,5 @@ module.exports = function toReadable (number) {
                 result += ' nine';
                 break;
         }
+    return result;
 }
