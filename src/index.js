@@ -1,4 +1,4 @@
-/*module.exports = */function toReadable (number) {
+module.exports = function toReadable (number) {
     if(number === 0)
     {
         return 'zero';
@@ -143,5 +143,3 @@
     }
     return result;
 }
-
-console.log(toReadable(42));
